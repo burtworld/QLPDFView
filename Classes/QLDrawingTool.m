@@ -41,8 +41,8 @@
 //    return bounds;
 //}
 //
-- (void)draw
-{
+- (void)draw{
+//{
 //    CGContextRef context = UIGraphicsGetCurrentContext();
 //
 //    CGContextAddPath(context, path);
