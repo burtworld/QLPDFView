@@ -161,29 +161,29 @@
 - (void)updateCacheImage:(BOOL)redraw
 {
     // init a context
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
-    
-    if (redraw) {
-        // erase the previous image
-        self.image = nil;
-        
-        // load previous image (if returning to screen)
-//        [[self.prev_image copy] drawInRect:self.bounds];
-        
-        // I need to redraw all the lines
-        for (QLDrawingTool * tool in self.pathArray) {
-            [tool draw];
-        }
-        
-    } else {
-        // set the draw point
-        [self.image drawAtPoint:CGPointZero];
-        [self.currentTool draw];
-    }
-    
-    // store the image
-    self.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+//    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+//    
+//    if (redraw) {
+//        // erase the previous image
+//        self.image = nil;
+//        
+//        // load previous image (if returning to screen)
+////        [[self.prev_image copy] drawInRect:self.bounds];
+//        
+//        // I need to redraw all the lines
+//        for (QLDrawingTool * tool in self.pathArray) {
+//            [tool draw];
+//        }
+//        
+//    } else {
+//        // set the draw point
+//        [self.image drawAtPoint:CGPointZero];
+//        [self.currentTool draw];
+//    }
+//    
+//    // store the image
+//    self.image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
 }
 
 
