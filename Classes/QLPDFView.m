@@ -7,7 +7,7 @@
 //
 
 #import "QLPDFView.h"
-#import <QLCommonUtils/QLCommonUtils.h>
+
 #import "QLPDFDrawingView.h"
 
 @interface QLPDFView ()
@@ -52,27 +52,21 @@
 
 
 #pragma mark - actions
-- (void)saveToFile:(NSString *)path {
-    [MBProgressHUD showLoadingToView:self];
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSData *data = self.pdfView.document.dataRepresentation;
-        [data writeToFile:path atomically:YES];
-        
-        [MBProgressHUD hideHUDForView:self];
-        
-    });
+- (BOOL)saveToFile:(NSString *)path {
+    NSData *data = self.pdfView.document.dataRepresentation;
+    return [data writeToFile:path atomically:YES];
 }
 
-- (void)saveToFile:(NSString *)path block:(dispatch_block_t)block{
-    [MBProgressHUD showLoadingToView:self];
+- (void)saveToFile:(NSString *)path block:(void(^)(BOOL suc))block{
+//    [MBProgressHUD showLoadingToView:self];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSData *data = self.pdfView.document.dataRepresentation;
-        [data writeToFile:path atomically:YES];
+        BOOL suc = [data writeToFile:path atomically:YES];
         
-        [MBProgressHUD hideHUDForView:self];
+//        [MBProgressHUD hideHUDForView:self];
         self.drawingView.addAnnotationCount = 0;
         if (block) {
-            block();
+            block(suc);
         }
     });
 }

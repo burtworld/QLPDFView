@@ -39,12 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 保存文件
 /// @param path 保存路径
-- (void)saveToFile:(NSString *)path;
+- (BOOL)saveToFile:(NSString *)path;
 
 /// 保存文件
 /// @param path 文件路径
 /// @param block 回调
-- (void)saveToFile:(NSString *)path block:(dispatch_block_t)block;
+- (void)saveToFile:(NSString *)path block:(void(^)(BOOL suc))block;
 
 /// PDF下一页
 - (void)nextPage;
