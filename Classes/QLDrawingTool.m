@@ -41,8 +41,8 @@
 //    return bounds;
 //}
 //
-//- (void)draw
-//{
+- (void)draw
+{
 //    CGContextRef context = UIGraphicsGetCurrentContext();
 //
 //    CGContextAddPath(context, path);
@@ -56,7 +56,7 @@
 //    CGContextSetBlendMode(context, kCGBlendModeNormal);
 //    CGContextSetAlpha(context, self.lineAlpha);
 //    CGContextStrokePath(context);
-//}
+}
 
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "QLPDFView.h"
-
 #import "QLPDFDrawingView.h"
 
 @interface QLPDFView ()
