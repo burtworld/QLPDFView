@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "QLPDFView"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "PDF 涂鸦、签名功能"
 
   # This description is used to generate tags and improve search results.
